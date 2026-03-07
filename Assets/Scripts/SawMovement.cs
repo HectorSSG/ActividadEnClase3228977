@@ -3,10 +3,12 @@ using UnityEngine;
 
 public class SawMovement : MonoBehaviour
 {
+    public bool isActive;
     [SerializeField] private Transform Saw;
     [SerializeField] private List<Transform> targets = new List<Transform>();
     [SerializeField] private float speed;
     [SerializeField] private int currTarget;
+    [SerializeField] private Animator animator;
     private void Start()
     {
         Saw.position = targets[0].position;
@@ -14,6 +16,14 @@ public class SawMovement : MonoBehaviour
     }
     private void Update()
     {
+        if(isActive == true)
+        {
+            TurnOn();
+        }
+        else
+        {
+            TurnOff();
+        }
         if (Saw.position == targets[currTarget].position)
         {
             currTarget++;
@@ -23,5 +33,13 @@ public class SawMovement : MonoBehaviour
             currTarget = 0;
         }
         Saw.position = Vector2.MoveTowards(Saw.position, targets[currTarget].position, Time.deltaTime * speed);
+    }
+    private void TurnOn()
+    {
+        animator.SetBool("IsOn", true);
+    }
+    private void TurnOff()
+    {
+        
     }
 }
