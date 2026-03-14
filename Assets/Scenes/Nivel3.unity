@@ -327,7 +327,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 256112566}
-  - component: {fileID: 256112565}
   m_Layer: 0
   m_Name: Saw
   m_TagString: Untagged
@@ -335,27 +334,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &256112565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 256112564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20fa47a1591926c4ea8dd9ac740b795d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Saw: {fileID: 1761461840}
-  targets:
-  - {fileID: 1583294390}
-  - {fileID: 1640173496}
-  - {fileID: 1907206242}
-  - {fileID: 111543888}
-  speed: 0
-  currTarget: 0
-  animator: {fileID: 0}
 --- !u!4 &256112566
 Transform:
   m_ObjectHideFlags: 0
@@ -2299,6 +2277,7 @@ GameObject:
   - component: {fileID: 496155704}
   - component: {fileID: 496155706}
   - component: {fileID: 496155705}
+  - component: {fileID: 496155707}
   m_Layer: 0
   m_Name: Saw (1)
   m_TagString: Untagged
@@ -2333,6 +2312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20fa47a1591926c4ea8dd9ac740b795d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isActive: 0
   Saw: {fileID: 496155704}
   targets:
   - {fileID: 1223642511}
@@ -2341,7 +2321,7 @@ MonoBehaviour:
   - {fileID: 246116469}
   speed: 5
   currTarget: 0
-  animator: {fileID: 0}
+  animator: {fileID: 496155707}
 --- !u!212 &496155706
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2397,6 +2377,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &496155707
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496155703}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 05a39a431af5f5447ab8a0f422f157e3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &518301533
 GameObject:
   m_ObjectHideFlags: 0
@@ -3286,6 +3288,52 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1826258734}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1265892556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1265892558}
+  - component: {fileID: 1265892557}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1265892557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265892556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f38813e4237d524a8fdeca1f37324b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMove: 0
+  saw: {fileID: 1761461839}
+--- !u!4 &1265892558
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265892556}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.2063365, y: 0.8146757, z: 0.017409772}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1302363368
 GameObject:
@@ -5912,6 +5960,7 @@ GameObject:
   - component: {fileID: 1761461841}
   - component: {fileID: 1761461842}
   - component: {fileID: 1761461843}
+  - component: {fileID: 1761461844}
   m_Layer: 0
   m_Name: Saw
   m_TagString: Untagged
@@ -6001,6 +6050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20fa47a1591926c4ea8dd9ac740b795d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isActive: 0
   Saw: {fileID: 1761461840}
   targets:
   - {fileID: 1583294390}
@@ -6032,6 +6082,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1761461844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761461839}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80777be3eb277ce4fa75c6d4fa73ee46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isItMoving: 0
+  sawMovement: {fileID: 1761461842}
+  sawAnimation: {fileID: 1761461843}
 --- !u!1 &1826258733
 GameObject:
   m_ObjectHideFlags: 0
@@ -6159,3 +6224,4 @@ SceneRoots:
   - {fileID: 1302363370}
   - {fileID: 1965929585}
   - {fileID: 256112566}
+  - {fileID: 1265892558}
