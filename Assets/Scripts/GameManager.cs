@@ -7,6 +7,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        saw.SetActive(isMove);;
+        saw.SetActive(isMove);
     }
 }
